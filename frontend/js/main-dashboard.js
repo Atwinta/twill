@@ -13,6 +13,7 @@ import A17Notif from '@/plugins/A17Notif'
 // Dashboard
 import a17ShortcutCreator from '@/components/dashboard/shortcutCreator.vue'
 import A17ActivityFeed from '@/components/dashboard/activityFeed.vue'
+import A17ActivityFeedCustom from '@/components/dashboard/activityFeedCustom.vue'
 import A17StatFeed from '@/components/dashboard/statFeed.vue'
 import A17GenericFeed from '@/components/dashboard/genericFeed.vue'
 
@@ -29,15 +30,6 @@ store.registerModule('datatable', datatable)
 store.registerModule('language', language)
 store.registerModule('form', form)
 
-// ------------------------------------------
-const extractComponentNameFromContextKey = (contextKey) => `a17-${contextKey.match(/\w+/)[0].replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\s+/g, '-').toLowerCase()}`
-const importedDashboardComponents = require.context('@/components/customs/dashboard/', true, /\.(js|vue)$/i)
-importedDashboardComponents.keys().map(block => {
-  const componentName = extractComponentNameFromContextKey(block)
-  return Vue.component(componentName, importedDashboardComponents(block).default)
-})
-// ------------------------------------------
-
 /* eslint-disable no-new */
 /* eslint no-unused-vars: "off" */
 window[process.env.VUE_APP_NAME].vm = window.vm = new Vue({
@@ -46,6 +38,7 @@ window[process.env.VUE_APP_NAME].vm = window.vm = new Vue({
   components: {
     'a17-shortcut-creator': a17ShortcutCreator,
     'a17-activity-feed': A17ActivityFeed,
+    'a17-activity-feed-custom': A17ActivityFeedCustom,
     'a17-stat-feed': A17StatFeed,
     'a17-feed': A17GenericFeed
   },

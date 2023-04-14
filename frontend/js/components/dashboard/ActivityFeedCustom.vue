@@ -21,10 +21,10 @@
     </div>
 </template>
 <script>
-import { mapState } from 'vuex'
-import { DATATABLE } from '@/store/mutations'
-// import ACTIONS from '@/store/actions'
-import A17ActivityRow from '@/components/dashboard/activityRow.vue'
+  import { mapState } from 'vuex'
+  import { DATATABLE } from '@/store/mutations'
+  // import ACTIONS from '@/store/actions'
+  import A17ActivityRow from '@/components/dashboard/activityRow.vue'
 /* eslint-disable */
 export default {
     name: 'A17ActivityFeedCustom',
