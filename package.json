@@ -1,6 +1,6 @@
 {
     "name": "@area17/twill",
-    "version": "2.12.5",
+    "version": "2.12.7",
     "private": true,
     "scripts": {
         "inspect": "vue-cli-service inspect --mode production",
