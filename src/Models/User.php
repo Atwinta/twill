@@ -32,7 +32,8 @@ class User extends AuthenticatableContract
         'description',
         'google_2fa_enabled',
         'google_2fa_secret',
-        'language'
+        'language',
+        'privilege',
     ];
 
     protected $dates = [
@@ -53,7 +54,10 @@ class User extends AuthenticatableContract
         ],
     ];
 
-    protected $casts = ['published' => 'boolean'];
+    protected $casts = [
+        'published' => 'boolean',
+        'privilege'=>'array',
+    ];
 
     public function __construct(array $attributes = [])
     {
