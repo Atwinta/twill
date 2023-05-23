@@ -56,7 +56,6 @@ class User extends AuthenticatableContract
 
     protected $casts = [
         'published' => 'boolean',
-        'privilege'=>'array',
     ];
 
     public function __construct(array $attributes = [])
